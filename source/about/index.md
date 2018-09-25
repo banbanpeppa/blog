@@ -1,0 +1,23 @@
+---
+title: About Me
+layout: about
+comments: false
+header-img: images/blog-bg.png
+---
+
+## 链接
+
+<p align="center">
+	<a href="http://gaocegege.com/Blog"><img src="https://img.shields.io/badge/blog-100k%20pageviews-ffffff.svg?style=social" alt="Blog"></a>
+	<a href="https://github.com/gaocegege/"><img src="https://img.shields.io/github/followers/gaocegege.svg?style=social&label=Follow" alt="GitHub"></a>
+	<a href="http://gaocegege.com/resume/"><img src="https://img.shields.io/badge/resume-english-blue.svg" alt="Resume"></a>
+	<a href="http://gaocegege.com/resume/cn/"><img src="https://img.shields.io/badge/%E7%AE%80%E5%8E%86-%E4%B8%AD%E6%96%87-blue.svg" alt="Resume in Chinese"></a>
+	<a href="http://en.sjtu.edu.cn/"><img src="https://img.shields.io/badge/univ-SJTU-020081.svg" alt="SJTU"></a>
+	<a href="http://en.sjtu.edu.cn/"><img src="https://img.shields.io/badge/degree-master-0100b3.svg" alt="Master"></a>
+</p>
+
+## 职业经历
+
+## 教育经历
+
+## 所获奖项
