@@ -7,17 +7,27 @@ header-img: images/blog-bg.png
 
 ## 链接
 
-<p align="center">
-	<a href="http://gaocegege.com/Blog"><img src="https://img.shields.io/badge/blog-100k%20pageviews-ffffff.svg?style=social" alt="Blog"></a>
-	<a href="https://github.com/gaocegege/"><img src="https://img.shields.io/github/followers/gaocegege.svg?style=social&label=Follow" alt="GitHub"></a>
-	<a href="http://gaocegege.com/resume/"><img src="https://img.shields.io/badge/resume-english-blue.svg" alt="Resume"></a>
-	<a href="http://gaocegege.com/resume/cn/"><img src="https://img.shields.io/badge/%E7%AE%80%E5%8E%86-%E4%B8%AD%E6%96%87-blue.svg" alt="Resume in Chinese"></a>
-	<a href="http://en.sjtu.edu.cn/"><img src="https://img.shields.io/badge/univ-SJTU-020081.svg" alt="SJTU"></a>
-	<a href="http://en.sjtu.edu.cn/"><img src="https://img.shields.io/badge/degree-master-0100b3.svg" alt="Master"></a>
-</p>
+[Blog://banbanpeppa.github.io](https://banbanpeppa.github.io)
+[GitHub://banbanpeppa](https://github.com/banbanpeppa/)
+[知乎://wisteriasomnus](https://www.zhihu.com/people/wisteria-somnus/)
+[中文 Resume](http://banbansomnus.coding.me/banban/resume-cn.pdf)
 
 ## 职业经历
+**网易游戏** \| 2018.07 – 2018.09 \| GDC\| 基础架构开发工程师(实习)
+- 基于Kubernetes-CRD机制和TensorFlow框架实现深度学习任务调度平台
+- 加入深度学习平台开源项目 [Kubeflow](https://github.com/kubeflow) 社区和 [Arena](https://github.com/kubeflow/arena) 并贡献代码
+- 基于 [Kubeflow](https://github.com/kubeflow) 的组件 tf-operator 实现深度学习管理平台cronus-server、cronus-cli和cronus-Dashboard
+
+**勤思网络科技有限公司** \| 2015.07 – 2015.09 \| Java研发工程师(实习)
+- 负责足球社交软件“云球”项目的Java后端开发工作
+- 采用技术框架: Spring + Resteasy + JPA
 
 ## 教育经历
+- **华南理工大学** \| 计算机科学与工程学院 \| 2016.09 – 2019.09 (预计) \| 研究生 \| 计算机科学与技术
+- **华南理工大学** \| 计算机科学与工程学院 \| 2012.09 – 2016.06 \| 计算机软件
 
 ## 所获奖项
+- 2018.07 **迅雷区块链大赛五十强**	荣誉证书
+- 2018.06 **公有链Nebulas全球区块链Dapp大赛**	周星奖
+- 2018.06 **公有链Nebulas全球区块链Dapp大赛**	优秀奖
+- 2013.10 **国家励志奖学金**	专业排名 3/56
