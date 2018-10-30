@@ -38,7 +38,7 @@ disqus_username: banbanblog
 
 # Sidebar settings
 sidebar: true
-sidebar-about-description: "Hi, I'm banban(Chen Zhi Ling). A software engineer."
+sidebar-about-description: "Hi, I'm banban(Chen Zhi Ling). A Software Engineer."
 sidebar-avatar: images/profile.png
 widgets:
 - short-about
@@ -57,8 +57,12 @@ featured-condition-size: 12
 
 friends: [
     {
-        title: "gaocegege",
-        href: "http://gaocegege.com/Blog/"
+      title: "silence",
+      href: "https://silence-linhl.github.io/blog/"
+    },
+    {
+      title: "b3434lock",
+      href: "https://b3434lock.gitee.io/"
     }
 ]
 

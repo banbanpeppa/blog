@@ -484,4 +484,4 @@ export KUBECONFIG=$HOME/kubelet.conf
     
 ## 总结
 
-Kubernetes安装过程中难免遇到很多问题，这边也许有些问题没有遇到，但是只要认真寻找解决方案就可以解决。目前Kubernete使用的网络是比较简单的flannel和wavenet，或许在之后的使用中会变更网络
+Kubernetes安装过程中难免遇到很多问题，寻找问题源头，查看日志是个好办法。目前Kubernete使用的网络是比较简单的flannel和wavenet，或许在之后的使用中会变更网络
