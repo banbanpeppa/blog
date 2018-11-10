@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      超级账本使用fabric-sample
+title:      超级账本使用fabric-first-network
 date:       2018-09-26 10:32:00
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
@@ -1073,9 +1073,9 @@ docker exec -it cli bash
 ```
 进入到容器之后，查看各个环境变量
 ```
-echo $CORE_PEER_MSPCONFIGPATH
-echo $CORE_PEER_ADDRESS
-echo $CORE_PEER_LOCALMSPID
+echo $CORE_PEER_MSPCONFIGPATH && \
+echo $CORE_PEER_ADDRESS && \
+echo $CORE_PEER_LOCALMSPID && \
 echo $CORE_PEER_TLS_ROOTCERT_FILE
 ```
 内容应该和下面一样
