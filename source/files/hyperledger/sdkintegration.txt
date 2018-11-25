@@ -1,0 +1,301 @@
+﻿-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up _JAVA_OPTIONS:   -Dawt.useSystemAAFontSettings=gasp
+Running org.hyperledger.fabric.sdkintegration.End2endIT
+
+
+
+RUNNING: End2endIT.
+
+2018-11-12 10:44:10,734 main WARN  SampleStore:90 - Could not find the file "/tmp/HFCSampletest.properties"
+2018-11-12 10:44:10,746 main WARN  SampleStore:90 - Could not find the file "/tmp/HFCSampletest.properties"
+Constructing channel foo
+Created channel foo
+2018-11-12 10:44:16,377 main INFO  Channel:780 - Peer peer0.org1.example.com joined into channel foo
+Peer peer0.org1.example.com joined channel foo
+2018-11-12 10:44:16,647 main INFO  Channel:780 - Peer peer1.org1.example.com joined into channel foo
+Peer peer1.org1.example.com joined channel foo
+Finished initialization channel foo
+Running channel foo
+Creating install proposal
+Sending install proposal
+2018-11-12 10:44:17,168 main INFO  InstallProposalBuilder:244 - Installing 'example_cc_go::github.com/example_cc::1' language Go chaincode from directory: '/opt/go/src/github.com/hyperledger/fabric-sdk-java/src/test/fixture/sdkintegration/gocc/sample1/src/github.com/example_cc' with source location: 'src/github.com/example_cc'. chaincodePath:'github.com/example_cc'
+Successful install proposal response Txid: e578b3ca7f5bab8ee3bacf0b8b0bba22b2150fd487f932698aed68125b31a833 from peer peer1.org1.example.com
+Successful install proposal response Txid: e578b3ca7f5bab8ee3bacf0b8b0bba22b2150fd487f932698aed68125b31a833 from peer peer0.org1.example.com
+Received 2 install proposal responses. Successful+verified: 2 . Failed: 0
+Sending instantiateProposalRequest to all peers with arguments: a and b set to 100 and 200 respectively
+Succesful instantiate proposal response Txid: 901ba72963b5364e625ce46aefe4cdd15c84e9cea45a3a5e55625d424a1294cf from peer peer1.org1.example.com
+Succesful instantiate proposal response Txid: 901ba72963b5364e625ce46aefe4cdd15c84e9cea45a3a5e55625d424a1294cf from peer peer0.org1.example.com
+Received 2 instantiate proposal responses. Successful+verified: 2 . Failed: 0
+Sending instantiateTransaction to orderer with a and b set to 100 and 200 respectively
+Finished instantiate transaction with transaction id 901ba72963b5364e625ce46aefe4cdd15c84e9cea45a3a5e55625d424a1294cf
+sending transactionProposal to all peers with arguments: move(a,b,100)
+Successful transaction proposal response Txid: e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf from peer peer1.org1.example.com
+Successful transaction proposal response Txid: e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf from peer peer0.org1.example.com
+Received 2 transaction proposal responses. Successful+verified: 2 . Failed: 0
+Successfully received transaction proposal responses.
+Sending chaincode transaction(move a,b,100) to orderer.
+RECEIVED Chaincode event with handle: CHAINCODE_EVENTS_HANDLE3624f2b2-7fea-4050-a1ac-691ec319aee9CHAINCODE_EVENTS_HANDLE, chaincode Id: example_cc_go, chaincode event name: event, transaction id: e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf, event payload: "!", from eventhub: peer0.org1.example.com
+Finished transaction with transaction id e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf
+Now query chaincode for the value of b.
+RECEIVED Chaincode event with handle: CHAINCODE_EVENTS_HANDLE3624f2b2-7fea-4050-a1ac-691ec319aee9CHAINCODE_EVENTS_HANDLE, chaincode Id: example_cc_go, chaincode event name: event, transaction id: e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf, event payload: "!", from eventhub: peer1.org1.example.com
+Query payload of b from peer peer1.org1.example.com returned 300
+Query payload of b from peer peer0.org1.example.com returned 300
+Channel info for : foo
+Channel height: 3
+Chain current block hash: c04358c0c0ebfa15cbf6d83876d86b926bdcc4415faa4254c0e10afc02744a9e
+Chainl previous block hash: e3733dfda0dc6725997f937473daea517a1336fa686f0992f5555a59313fffc6
+queryBlockByNumber returned correct block with blockNumber 2 
+ previous_hash e3733dfda0dc6725997f937473daea517a1336fa686f0992f5555a59313fffc6
+queryBlockByHash returned block with blockNumber 1
+queryBlockByTxID returned block with blockNumber 2
+QueryTransactionByID returned TransactionInfo: txID e81e224ddbd0b66bb6002ff0a24d61d68f266e0c52c92f13465cadebc68659cf
+     validation code 0
+Running for Channel foo done
+
+
+Constructing channel bar
+2018-11-12 10:44:58,058 main WARN  Channel:1979 - Bad deliver expected status 200  got  404, Channel bar
+Created channel bar
+2018-11-12 10:44:58,570 main INFO  Channel:780 - Peer peer0.org2.example.com joined into channel bar
+Peer peer0.org2.example.com joined channel bar
+2018-11-12 10:44:58,836 main INFO  Channel:780 - Peer peer1.org2.example.com joined into channel bar
+Peer peer1.org2.example.com joined channel bar
+Finished initialization channel bar
+Running channel bar
+Creating install proposal
+Sending install proposal
+2018-11-12 10:44:59,252 main INFO  InstallProposalBuilder:258 - Installing 'example_cc_go::github.com/example_cc::1'  Go chaincode chaincodePath:'github.com/example_cc' from input stream
+Successful install proposal response Txid: d56b14f9257d119283f220da22fdcdc642e709035f4458da4a5b9bce029546f7 from peer peer0.org2.example.com
+Successful install proposal response Txid: d56b14f9257d119283f220da22fdcdc642e709035f4458da4a5b9bce029546f7 from peer peer1.org2.example.com
+Received 2 install proposal responses. Successful+verified: 2 . Failed: 0
+Sending instantiateProposalRequest to all peers with arguments: a and b set to 100 and 300 respectively
+Succesful instantiate proposal response Txid: 28ffa8d538bcfd8e82f17e5d9bd2136ad8569b3354f5f0c1f911a1429d375208 from peer peer0.org2.example.com
+Succesful instantiate proposal response Txid: 28ffa8d538bcfd8e82f17e5d9bd2136ad8569b3354f5f0c1f911a1429d375208 from peer peer1.org2.example.com
+Received 2 instantiate proposal responses. Successful+verified: 2 . Failed: 0
+Sending instantiateTransaction to orderer with a and b set to 100 and 300 respectively
+Finished instantiate transaction with transaction id 28ffa8d538bcfd8e82f17e5d9bd2136ad8569b3354f5f0c1f911a1429d375208
+sending transactionProposal to all peers with arguments: move(a,b,100)
+Successful transaction proposal response Txid: 2ea6fa54fe04f9e04b1c2f315494fd16e1bd2aa4bbd4bbd48c5e4513ea55ecff from peer peer0.org2.example.com
+Successful transaction proposal response Txid: 2ea6fa54fe04f9e04b1c2f315494fd16e1bd2aa4bbd4bbd48c5e4513ea55ecff from peer peer1.org2.example.com
+Received 2 transaction proposal responses. Successful+verified: 2 . Failed: 0
+Successfully received transaction proposal responses.
+Sending chaincode transaction(move a,b,100) to orderer.
+Finished transaction with transaction id 2ea6fa54fe04f9e04b1c2f315494fd16e1bd2aa4bbd4bbd48c5e4513ea55ecff
+Now query chaincode for the value of b.
+Query payload of b from peer peer0.org2.example.com returned 400
+Query payload of b from peer peer1.org2.example.com returned 400
+Channel info for : bar
+Channel height: 3
+Chain current block hash: 798facaca59f5dd26d16248c34951cc20b92ee4c2afdc7ac1267d9232d577727
+Chainl previous block hash: 2551c9cf706e1561ef3ef2309135b1f4e7a582fcdb9b671753d2ad4b84fa7d31
+queryBlockByNumber returned correct block with blockNumber 2 
+ previous_hash 2551c9cf706e1561ef3ef2309135b1f4e7a582fcdb9b671753d2ad4b84fa7d31
+queryBlockByHash returned block with blockNumber 1
+queryBlockByTxID returned block with blockNumber 2
+QueryTransactionByID returned TransactionInfo: txID 2ea6fa54fe04f9e04b1c2f315494fd16e1bd2aa4bbd4bbd48c5e4513ea55ecff
+     validation code 0
+Running for Channel bar done
+
+Traverse the blocks for chain bar 
+current block number 2 has data hash: 9ff8e5bad8314c915572406814f0eff9a6fd30d348a278d865a0d21b60f8e344
+current block number 2 has previous hash id: 2551c9cf706e1561ef3ef2309135b1f4e7a582fcdb9b671753d2ad4b84fa7d31
+current block number 2 has calculated block hash is 798facaca59f5dd26d16248c34951cc20b92ee4c2afdc7ac1267d9232d577727
+current block number 2 has 1 envelope count:
+  Transaction number 1 has transaction id: 2ea6fa54fe04f9e04b1c2f315494fd16e1bd2aa4bbd4bbd48c5e4513ea55ecff
+  Transaction number 1 has channel id: bar
+  Transaction number 1 has epoch: 0
+  Transaction number 1 has transaction timestamp: 十一月 12,  2018  18:45:31 下午
+  Transaction number 1 has type id: TRANSACTION_ENVELOPE
+  Transaction number 1 has nonce : 23a87382e6ff502cef6b2e93f7ecb984dd6d3c425bee830d
+  Transaction number 1 has submitter mspid: Org2MSP,  certificate: -----BEGIN CERTIFICATE-----
+MIICjzCCAjWgAwIBAgIUXly9pC3SKi6SspvadT6/7yZuL/gwCgYIKoZIzj0EAwIw
+czELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh
+biBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzIuZXhhbXBsZS5jb20xHDAaBgNVBAMT
+E2NhLm9yZzIuZXhhbXBsZS5jb20wHhcNMTgxMTEyMTAzOTAwWhcNMTkxMTEyMTA0
+NDAwWjBCMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw
+YXJ0bWVudDExDjAMBgNVBAMTBXVzZXIxMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD
+QgAEoVEK4/tNSeiVkIOV3mJ6CyY6TU/3/8tuN01E2OLy8JAPzeM83UufzqYW+E00
+Cg/xxbHci7mf7S9yJq2DzmFZKaOB1zCB1DAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0T
+AQH/BAIwADAdBgNVHQ4EFgQUviDcSbHtrQ5dyAo5M8ERCU9Pk1EwKwYDVR0jBCQw
+IoAgeyt2U8RRLWzpU144FAY19Tm9ihML5UrJT34TG3Wg8j4waAYIKgMEBQYHCAEE
+XHsiYXR0cnMiOnsiaGYuQWZmaWxpYXRpb24iOiJvcmcxLmRlcGFydG1lbnQxIiwi
+aGYuRW5yb2xsbWVudElEIjoidXNlcjEiLCJoZi5UeXBlIjoiY2xpZW50In19MAoG
+CCqGSM49BAMCA0gAMEUCIQCvfPcMFYUj+VrWY3TBlIliDyfGx29oMOHcCECKveW/
+3AIgV54TBI62ak25+AgMXldNYPXxLbM86prwTQCAR16Sr/I=
+-----END CERTIFICATE-----
+
+  Transaction number 1 has 1 actions
+  Transaction number 1 isValid true
+  Transaction number 1 validation code 0
+   Transaction action 1 has response status 327
+   Transaction action 1 has response message bytes as string: 
+   Transaction action 1 has 2 endorsements
+Endorser 0 signature: 3045022100fca7fc0bcd790acbb667752d988cc06dd71d31429bee3b9993eecb6c0937089d0220379043aa9ba32f48dd94446d5c8e0d7998f624ac1353911e09257da4873c7903
+Endorser 0 endorser: mspid Org2MSP 
+ certificate -----BEGIN CERTIFICATE-----
+MIICGTCCAcCgAwIBAgIRAKoFq36AGyh9tmw1qzjKp2YwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzIuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzIuZXhhbXBsZS5jb20wHhcNMTgwMjI1MTI0MzI5WhcNMjgwMjIzMTI0MzI5
+WjBbMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEfMB0GA1UEAxMWcGVlcjAub3JnMi5leGFtcGxlLmNvbTBZ
+MBMGByqGSM49AgEGCCqGSM49AwEHA0IABFBM3gDUs/4Mp9DyF/uiUQkQk1UvqmmC
+uhuAXJgeTAob/tzvsLGGRS78dsuPVSGVS3p4vtuPhUBMVKtrnscgjemjTTBLMA4G
+A1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIHsrdlPEUS1s
+6VNeOBQGNfU5vYoTC+VKyU9+Ext1oPI+MAoGCCqGSM49BAMCA0cAMEQCIDbFc/hr
+0RYfp0e9HqBW+tel9c9VCW7E+C7XO4e7ZYBJAiAVkjEFKpKadLUpA2cK0YHobNRH
+zxIaKjL+wLVfr2wTzQ==
+-----END CERTIFICATE-----
+
+Endorser 1 signature: 3045022100f5424fda610857e1b5a2d27158d29d8811a2591dfb9d41e1b1e0f4a337bfc3f90220478d0c58deb0fbf958ccaa6529b5df3fed19142439521caab08507a57d825566
+Endorser 1 endorser: mspid Org2MSP 
+ certificate -----BEGIN CERTIFICATE-----
+MIICGDCCAb+gAwIBAgIQKHCjvLJSTkKm5lsAG4StsTAKBggqhkjOPQQDAjBzMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEZMBcGA1UEChMQb3JnMi5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu
+b3JnMi5leGFtcGxlLmNvbTAeFw0xODAyMjUxMjQzMjlaFw0yODAyMjMxMjQzMjla
+MFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+YW4gRnJhbmNpc2NvMR8wHQYDVQQDExZwZWVyMS5vcmcyLmV4YW1wbGUuY29tMFkw
+EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIPHSGaXYokkyDT7hjv7xR7qdr/4unay4
+6ney+f+SaX3/+GS23ETzxjeZYyoKYy+nMjTGVtMx1k9m/KHHZUS4PaNNMEswDgYD
+VR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgeyt2U8RRLWzp
+U144FAY19Tm9ihML5UrJT34TG3Wg8j4wCgYIKoZIzj0EAwIDRwAwRAIgRiUmbSDL
+ZT4ETQzsS57MpfinlBo+WM/3ChUtTOL8BlgCIB8jfwjtaP22vH4w+V52ztTgQCnq
+lCO/1jpx9z0ii78C
+-----END CERTIFICATE-----
+
+   Transaction action 1 has 4 chaincode input arguments
+     Transaction action 1 has chaincode input argument 0 is: move
+     Transaction action 1 has chaincode input argument 1 is: a
+     Transaction action 1 has chaincode input argument 2 is: b
+     Transaction action 1 has chaincode input argument 3 is: 100
+   Transaction action 1 proposal response status: 327
+   Transaction action 1 proposal response payload: :)
+   Transaction action 1 proposal chaincodeIDName: example_cc_go, chaincodeIDVersion: 1,  chaincodeIDPath: github.com/example_cc 
+   Transaction action 1 has 2 name space read write sets
+     Namespace example_cc_go read set 0 key a  version [1:0]
+     Namespace example_cc_go read set 1 key b  version [1:0]
+     Namespace example_cc_go write set 0 key a has value '400' 
+     Namespace example_cc_go write set 1 key b has value '400' 
+     Namespace lscc read set 0 key example_cc_go  version [1:0]
+current block number 1 has data hash: 72a6a041dad2d4a9db248ec14880c2f9d9220f2c2d34e25d1cd3b36b4aaaac99
+current block number 1 has previous hash id: 1a04d746ac0782c3b72de0f46ded103c610264b76091cea3b34e50dc05cb4673
+current block number 1 has calculated block hash is 2551c9cf706e1561ef3ef2309135b1f4e7a582fcdb9b671753d2ad4b84fa7d31
+current block number 1 has 1 envelope count:
+  Transaction number 1 has transaction id: 28ffa8d538bcfd8e82f17e5d9bd2136ad8569b3354f5f0c1f911a1429d375208
+  Transaction number 1 has channel id: bar
+  Transaction number 1 has epoch: 0
+  Transaction number 1 has transaction timestamp: 十一月 12,  2018  18:44:59 下午
+  Transaction number 1 has type id: TRANSACTION_ENVELOPE
+  Transaction number 1 has nonce : 9ad079b01627c2660e42495e8dfc9b86486f168a172740ae
+  Transaction number 1 has submitter mspid: Org2MSP,  certificate: -----BEGIN CERTIFICATE-----
+MIICGjCCAcCgAwIBAgIRAIrZokP5xguxCqWjUeu0jnAwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzIuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzIuZXhhbXBsZS5jb20wHhcNMTgwMjI1MTI0MzI5WhcNMjgwMjIzMTI0MzI5
+WjBbMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEfMB0GA1UEAwwWQWRtaW5Ab3JnMi5leGFtcGxlLmNvbTBZ
+MBMGByqGSM49AgEGCCqGSM49AwEHA0IABGDqXVD4yOX65oU0eY3j5UtD8Gr8n/s+
+eODjPP76wNeBoSqljQYM+D953dBtzZ87udrwQ2uvcpUI1R1mHTMuNmSjTTBLMA4G
+A1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIHsrdlPEUS1s
+6VNeOBQGNfU5vYoTC+VKyU9+Ext1oPI+MAoGCCqGSM49BAMCA0gAMEUCIQCojuxd
+EqSDDDUUJstAmAqU65xkd1/Yf0BVpLdCe++WigIgLWC9rBPpUa+Yhe3yy00+BlqG
+xZ0h2eeiHaMuF6Qawy4=
+-----END CERTIFICATE-----
+
+  Transaction number 1 has 1 actions
+  Transaction number 1 isValid true
+  Transaction number 1 validation code 0
+   Transaction action 1 has response status 200
+   Transaction action 1 has response message bytes as string: 
+   Transaction action 1 has 2 endorsements
+Endorser 0 signature: 3045022100abf021c312373fe19aeb03b10f04e2e702df63e3001bbef2a009ee251889e530022053f13abfc7eb2b0d5d0a0e4bc87cb8b742259e9eff038340f9779766f34ac30b
+Endorser 0 endorser: mspid Org2MSP 
+ certificate -----BEGIN CERTIFICATE-----
+MIICGTCCAcCgAwIBAgIRAKoFq36AGyh9tmw1qzjKp2YwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzIuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzIuZXhhbXBsZS5jb20wHhcNMTgwMjI1MTI0MzI5WhcNMjgwMjIzMTI0MzI5
+WjBbMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEfMB0GA1UEAxMWcGVlcjAub3JnMi5leGFtcGxlLmNvbTBZ
+MBMGByqGSM49AgEGCCqGSM49AwEHA0IABFBM3gDUs/4Mp9DyF/uiUQkQk1UvqmmC
+uhuAXJgeTAob/tzvsLGGRS78dsuPVSGVS3p4vtuPhUBMVKtrnscgjemjTTBLMA4G
+A1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIHsrdlPEUS1s
+6VNeOBQGNfU5vYoTC+VKyU9+Ext1oPI+MAoGCCqGSM49BAMCA0cAMEQCIDbFc/hr
+0RYfp0e9HqBW+tel9c9VCW7E+C7XO4e7ZYBJAiAVkjEFKpKadLUpA2cK0YHobNRH
+zxIaKjL+wLVfr2wTzQ==
+-----END CERTIFICATE-----
+
+Endorser 1 signature: 3045022100b66164566d005ed38f5b0147b47ff5257b93808438432e612442d4332a823cec02206ea85e3c20482521d98092599aa249bbdc91a6c59b327d1d0a80ba5b1b60b772
+Endorser 1 endorser: mspid Org2MSP 
+ certificate -----BEGIN CERTIFICATE-----
+MIICGDCCAb+gAwIBAgIQKHCjvLJSTkKm5lsAG4StsTAKBggqhkjOPQQDAjBzMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEZMBcGA1UEChMQb3JnMi5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu
+b3JnMi5leGFtcGxlLmNvbTAeFw0xODAyMjUxMjQzMjlaFw0yODAyMjMxMjQzMjla
+MFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+YW4gRnJhbmNpc2NvMR8wHQYDVQQDExZwZWVyMS5vcmcyLmV4YW1wbGUuY29tMFkw
+EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIPHSGaXYokkyDT7hjv7xR7qdr/4unay4
+6ney+f+SaX3/+GS23ETzxjeZYyoKYy+nMjTGVtMx1k9m/KHHZUS4PaNNMEswDgYD
+VR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgeyt2U8RRLWzp
+U144FAY19Tm9ihML5UrJT34TG3Wg8j4wCgYIKoZIzj0EAwIDRwAwRAIgRiUmbSDL
+ZT4ETQzsS57MpfinlBo+WM/3ChUtTOL8BlgCIB8jfwjtaP22vH4w+V52ztTgQCnq
+lCO/1jpx9z0ii78C
+-----END CERTIFICATE-----
+
+   Transaction action 1 has 4 chaincode input arguments
+     Transaction action 1 has chaincode input argument 0 is: deploy
+     Transaction action 1 has chaincode input argument 1 is: bar
+     Transaction action 1 has chaincode input argument 2 is: ?E???)??github.com/example_cc??example_cc_go??1????init??a??500?...
+     Transaction action 1 has chaincode input argument 3 is: ? ??????????????????????????????????????Org1MSP??????Org2MSP????...
+   Transaction action 1 proposal response status: 200
+   Transaction action 1 proposal response payload: ??example_cc_go??1??escc"?vscc*Z? ??????????????????????????????...
+   Transaction action 1 proposal chaincodeIDName: lscc, chaincodeIDVersion: 1.2.1,  chaincodeIDPath:  
+   Transaction action 1 has 2 name space read write sets
+     Namespace example_cc_go write set 0 key a has value '500' 
+     Namespace example_cc_go write set 1 key b has value '300' 
+     Namespace lscc read set 0 key example_cc_go  version [0:0]
+     Namespace lscc write set 0 key example_cc_go has value '??example_cc_go??1??escc"?vscc*Z? ??????????????????????????????...' 
+current block number 0 has data hash: c99b9929f4be32c6cf6ad4feda34385498311baed8bb17c581ea20763f1906eb
+current block number 0 has previous hash id: 
+current block number 0 has calculated block hash is 1a04d746ac0782c3b72de0f46ded103c610264b76091cea3b34e50dc05cb4673
+current block number 0 has 1 envelope count:
+  Transaction number 1 has transaction id: 
+  Transaction number 1 has channel id: bar
+  Transaction number 1 has epoch: 0
+  Transaction number 1 has transaction timestamp: 十一月 12,  2018  18:44:57 下午
+  Transaction number 1 has type id: ENVELOPE
+  Transaction number 1 has nonce : 50d6628e51a1ad8fe46f7686a3379a905fabe89d07ee3a1c
+  Transaction number 1 has submitter mspid: OrdererMSP,  certificate: -----BEGIN CERTIFICATE-----
+MIICCzCCAbKgAwIBAgIQUcfZvWT8UgJJ30cDzW15bDAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTE4MDIyNTEyNDMyOVoXDTI4MDIyMzEyNDMyOVowWDELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xHDAaBgNVBAMTE29yZGVyZXIuZXhhbXBsZS5jb20wWTATBgcqhkjOPQIBBggq
+hkjOPQMBBwNCAARQfP/qUmnEcXIlE5PlkR4RCMn2XykMsPFZN0k1XfpkSA4KP0nC
+ALUgiITKLsOQohYA7oDaFQD/ZhaRswgwEgmNo00wSzAOBgNVHQ8BAf8EBAMCB4Aw
+DAYDVR0TAQH/BAIwADArBgNVHSMEJDAigCAZtRU3kIVNroUKD5QVcPw8VpuHhyOT
+OtWpwxnSk/LUkjAKBggqhkjOPQQDAgNHADBEAiApAQ0e/qdVsd5qtXGHqYKRt30Y
+LPaGPmy8wbX8+/KDhwIgXtt1TL97Z0rfq7iKXzXLRNk8jNntsrmRFoLVstXr3dA=
+-----END CERTIFICATE-----
+
+That's all folks!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 85.675 sec - in org.hyperledger.fabric.sdkintegration.End2endIT
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (post-unit-test) @ fabric-sdk-java ---
+[INFO] Loading execution data file /opt/go/src/github.com/hyperledger/fabric-sdk-java/target/coverage-reports/jacoco-ut.exec
+[INFO] Analyzed bundle 'fabric-java-sdk' with 199 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:52 min
+[INFO] Finished at: 2018-11-12T18:45:36+08:00
+[INFO] ------------------------------------------------------------------------

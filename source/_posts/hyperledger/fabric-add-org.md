@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Fabric添加Org
+title:      Hyperledger Fabric (四) — Fabric添加Org
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
 catalog: true

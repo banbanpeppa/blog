@@ -73,6 +73,8 @@ python server.py -c /etc/shadowsocksr.json -d stop
 
 ## SSR工具包下载
 
+https://github.com/banbanpeppa/banbanpeppa.github.io/releases/tag/v1.0
+
 ### Windows
 
 SSR_for_win.zip [下载地址](https://github.com/banbanpeppa/banbanpeppa.github.io/releases/tag/v1.0)

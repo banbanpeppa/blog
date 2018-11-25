@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      超级账本使用fabric-first-network
+title:      Hyperledger Fabric (一) — 超级账本使用fabric-first-network
 date:       2018-09-26 10:32:00
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
@@ -30,9 +30,11 @@ pip install --upgrade pip
 pip install docker-compose
 
 curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose && sudo cp /usr/local/bin/docker-compose /usr/bin
 docker-compose --version
 ```
+
+docker-compose的最新版本可以在[github](https://github.com/docker/compose/releases)找到。
 
 ### 安装go
 ```
@@ -40,9 +42,9 @@ wget http://p22qphkhy.bkt.clouddn.com/go1.10.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 vim /etc/profile
 
-    export GOROOT=/usr/local/go
-    export PATH=$PATH:$GOROOT/bin
-    export GOPATH=/opt/gopath
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=/opt/gopath
 
 source  /etc/profile
 go version

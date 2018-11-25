@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Fabric更新配置
+title:      Hyperledger Fabric (五) — Fabric更新配置
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
 catalog: true

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Linux系统安装jdk8
+title:      Linux系统安装JDK8
 author:     "banban"
 header-img: "/images/java/java-bg.jpg"
 catalog: true
