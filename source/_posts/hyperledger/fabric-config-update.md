@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Hyperledger Fabric (五) — Fabric更新配置
+date:       2018-11-06 12:00:00
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
 catalog: true

@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      小米深度学习平台cloud-ml
+date:       2018-10-25 09:00:00
 author:     "banban"
 header-img: "/images/ml-plateform/cloud-ml/bg.png"
 catalog: true

@@ -120,7 +120,7 @@ Get installed chaincodes on peer:
 
 执行
 ```
-peer chaincode install -n mycc -v 1.0 -p github.com/chaincode/marbles02/go
+peer chaincode install -n marbles -v 1.0 -p github.com/chaincode/marbles02/go
 ```
 实例化链码
 ```
@@ -154,7 +154,7 @@ services:
       - "5984:5984"
 ```
 指明了`couchdb`容器对应的端口映射，因此我们可以通过外部网络访问`couchdb`的`web`接口`Fauxton`，但是这个操作在生产环境中是不建议的，会出现安全问题
-`http://localhost:5984/_util`
+`http://localhost:5984/_utils`
 ![image](/images/blockchain/hyperledger/fabric-couchdb.png)
 
 查询`marble2`

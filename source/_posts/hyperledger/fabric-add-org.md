@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Hyperledger Fabric (四) — Fabric添加Org
+date:       2018-10-30 12:00:00
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
 catalog: true

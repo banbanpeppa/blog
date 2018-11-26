@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Linux系统安装JDK8
+date:       2018-11-08 10:00:00
 author:     "banban"
 header-img: "/images/java/java-bg.jpg"
 catalog: true

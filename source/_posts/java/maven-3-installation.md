@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Linux系统安装Maven3
+date:       2018-11-11 10:00:00
 author:     "banban"
 header-img: "/images/java/maven-bg.jpg"
 catalog: true

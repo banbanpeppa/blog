@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Hyperledger Fabric (六) — 使用fabric-sdk-java
+date:       2018-11-12 10:00:00
 author:     "banban"
 header-img: "/images/blockchain/hyperledger/bg.jpg"
 catalog: true
