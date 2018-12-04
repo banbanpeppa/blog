@@ -1890,6 +1890,36 @@ Process finished with exit code 0
 ## 结
 对于JAVA-SDK的使用于开发具体可以参考官方`sdkintegration`的`End2endIT`代码。
 
+## 补充
+以上示例是基于`java-sdk-integration`的，而如果想要使用`first-network`网络来作为sdk的对接网络，则需要对原来的网络进行相应修改，将TLS认证关闭（当然这个在生产环境中不建议使用）
+
+分别对`first-network/docker-compose-cli.yaml`、`first-network/base/peer-base.yaml`、`first-network/base/docker-compose-base.yaml`文件中的配置项`xxx_TLS_ENABLED`设置为`false`。
+```
+...
+CORE_PEER_TLS_ENABLED=false
+...
+
+...
+ORDERER_GENERAL_TLS_ENABLED=false
+...
+```
+
+然后重新启动网络，之后将`crypto-config`和`channel-artifacts`目录下的内容拷贝到`fabric-labour`项目的`resources`中。
+
+修改`FabricManager.java`类
+```
+private FabricConfig getConfig() {
+    FabricConfig config = new FabricConfig();
+    config.setOrderers(getOrderers());
+    config.setPeers(getPeers());
+    config.setChaincode(getChaincode("mychannel", "mycc", "github.com/chaincode/chaincode_example02/go/", "1.0"));
+    config.setChannelArtifactsPath(getChannleArtifactsPath());
+    config.setCryptoConfigPath(getCryptoConfigPath());
+    return config;
+}
+```
+之后便可以执行查询和写读写集等操作了。
+
 ## 附 - 关于fabric-java-sdk导入Eclipse
 
 由于官方的项目对`eclipse`的兼容性问题，需要处理之后才能成功导入
