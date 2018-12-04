@@ -72,6 +72,10 @@ Optionally install the server packages:
 ```
 yum install postgresql96-server postgresql96-contrib
 ```
+postgresql96-server - 数据库核心服务端
+postgresql96-contrib - 附加第三方扩展
+postgresql96-devel - C语言开发Header头文件和库
+
 Optionally initialize the database and enable automatic start:
 ```
 /usr/pgsql-9.6/bin/postgresql96-setup initdb
