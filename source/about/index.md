@@ -9,7 +9,7 @@ header-img: images/blog-bg.png
 
 [Blog://banbanpeppa.github.io](https://banbanpeppa.github.io)
 [GitHub://banbanpeppa](https://github.com/banbanpeppa/)
-[知乎://wisteriasomnus](https://www.zhihu.com/people/wisteria-somnus/)
+[知乎://wisteriasomnus](https://www.zhihu.com/people/banbanpeppa/)
 [中文 Resume](http://banbansomnus.coding.me/banban/resume-cn.pdf)
 
 ## 职业经历

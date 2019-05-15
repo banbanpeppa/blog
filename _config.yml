@@ -28,7 +28,7 @@ RSS: true
 github_username: banbanpeppa
 twitter_username: ZhilingSomnus
 weibo_username: 3112637187
-zhihu_username: wisteria-somnus
+zhihu_username: banbanpeppa
 
 # Build settings
 anchorjs: true
@@ -59,6 +59,10 @@ friends: [
     {
       title: "silence",
       href: "https://silence-linhl.github.io/blog/"
+    },
+    {
+      title: "yisiychan",
+      href: "https://yisiychan.github.io/"
     },
     {
       title: "b3434lock",

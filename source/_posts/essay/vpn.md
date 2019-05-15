@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "使用SSR搭建VPN"
+title:      使用SSR搭建梯子
 date:       2018-09-28 11:00:00
 author:     "banban"
 header-img: "/images/essay/vpn-bg.jpg"
@@ -13,11 +13,11 @@ tags:
 
 ## 国外VPS
 
-既然想要搭建一个VPN，自然国外的 VPS 必须要用，可以找国内阿里云、腾讯云的一些部署在国外的虚拟机，也可以用国外的云服务商提供的。这里推荐 [VULTR](https://www.vultr.com/?ref=7530118)，便宜，还挺好用的，应该是基于`OpenStack`做的。最普通的机器只需要`$2.5`。
+既然想要搭建一个梯子，自然国外的 VPS 必须要用，可以找国内阿里云、腾讯云的一些部署在国外的虚拟机，也可以用国外的云服务商提供的。这里推荐 [VULTR](https://www.vultr.com/?ref=7530118)，便宜，还挺好用的，应该是基于`OpenStack`做的。最普通的机器只需要`$2.5`。
 
 在租用虚拟机的时候可以选择美国或者东南亚的一些国家的机器，具体不赘述
 
-## 使用shadowsocksr搭建VPN
+## 使用shadowsocksr搭建梯子
 
 进入到虚拟机内部之后下载代码
 
@@ -47,8 +47,8 @@ json内容如下
     "speed_limit_per_con": 0,
     "speed_limit_per_user": 0,
 
-    "additional_ports" : {}, // only works under multi-user mode
-    "additional_ports_only" : false, // only works under multi-user mode
+    "additional_ports" : {},
+    "additional_ports_only" : false,
     "timeout": 120,
     "udp_timeout": 60,
     "dns_ipv6": false,

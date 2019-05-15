@@ -99,7 +99,7 @@ hexo server
 	github https://github.com/GGICE/hexo-icer
 	*Usage*
 	```
-	gem install hexo-generator-tag hexo-renderer-ejs hexo-renderer-sass \
+	npm install -g hexo-generator-tag hexo-renderer-ejs hexo-renderer-sass \
 	hexo-renderer-marked hexo-pagination hexo-generator-search
 	```
 

@@ -11,9 +11,9 @@ tags:
 
 # Mac pro 安装SecureCRT
 
-1\. 先下载[SecureCRT和破解文件](https://pan.baidu.com/s/1FPhUkE4MrVbqMG7TQjuSPQ),提取码: pezb，默认下载到了当前用户的”下载”目录中
+1\. 先下载[SecureCRT和破解文件](https://pan.baidu.com/s/1FPhUkE4MrVbqMG7TQjuSPQ),提取码: pezb，默认下载到了当前用户的"下载"目录中
 
-2\. 在”Finder”中 打开 “SecureCRT_7.3.6_patch_xclient.info.dmg” 并将 SecureCRT拖动到”应用程序”中. 这时SecureCRT的路径是: `/Applications/SecureCRT.app/Contents/MacOS/SecureCRT`
+2\. 在"Finder"中 打开 "SecureCRT_7.3.6_patch_xclient.info.dmg" 并将 SecureCRT拖动到"应用程序"中. 这时SecureCRT的路径是: `/Applications/SecureCRT.app/Contents/MacOS/SecureCRT`
 
 3\. 测试一下SecureCRT是否能打开, 如果可以,先关闭
 4\. 在终端中输入 
@@ -39,14 +39,17 @@ Issue Date: 09-17-2013
 
 2) 点击Enter Licence Manually
 
-3) Name:输入bleedfly Company:输入 bleedfly.com
+3) Name: bleedfly 
 
-4) Serial number: 03-29-002542
-　　　 License key: ADGB7V 9SHE34 Y2BST3 K78ZKF ADUPW4 K819ZW 4HVJCE P1NYRC
+4) Company: bleedfly.com
 
-5) Issue date: 09-17-2013
+5) Serial number: 03-29-002542
 
-6) 点击 Done
+6) License key: ADGB7V 9SHE34 Y2BST3 K78ZKF ADUPW4 K819ZW 4HVJCE P1NYRC
+
+7) Issue date: 09-17-2013
+
+8) 点击 Done
 
 激活完成。
 

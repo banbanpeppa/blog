@@ -11,7 +11,11 @@ tags:
 
 ## 环境准备
 ### 操作系统
-    Debian9: Debian 4.9.65-3+deb9u1 (2017-12-23) x86_64 GNU/Linux
+```
+Debian9: Debian 4.9.65-3+deb9u1 (2017-12-23) x86_64 GNU/Linux
+OR
+CentOS Linux release 7.6.1810 (Core) 
+```
 
 ### 服务器信息
 hostname | IP
@@ -124,8 +128,8 @@ minion-node-2 | 10.82.45.43
 ### 获取二进制文件
 在[Kubernetes](https://github.com/kubernetes/kubernetes)的github页面找到[release](https://github.com/kubernetes/kubernetes/releases)页，选择版本v1.11.0，点击[CHANGELOG-1.11.md](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#v1110)，会看到有包含server/client/node三个角色的Kubernetes的二进制文件,这边只需要下载node的二进制文件，我已经上传到了国内七牛云存储中
 ```
-wget http://pbqsx8kpd.bkt.clouddn.com/kubernetes-node-linux-11-amd64.tar.gz \
-&& tar zxvf kubernetes-node-linux-11-amd64.tar.gz \
+wget https://dl.k8s.io/v1.11.0/kubernetes-node-linux-amd64.tar.gz \
+&& tar zxvf kubernetes-node-linux-amd64.tar.gz \
 && cd kubernetes/node/bin \
 && chmod +x kube* \
 && cp kubelet kubectl kubeadm /usr/bin \
@@ -168,13 +172,13 @@ docker pull registry.cn-shenzhen.aliyuncs.com/k8s_gcr_io/pause:3.1
 
 接下来为各个镜像打tag
 ```
-docker tag 0e4a34a3b0e6 k8s.gcr.io/kube-scheduler-amd64:v1.11.0 && \ 
-docker tag 55b70b420785 k8s.gcr.io/kube-controller-manager-amd64:v1.11.0 && \ 
-docker tag 1d3d7afd77d1 k8s.gcr.io/kube-proxy-amd64:v1.11.0 && \ 
-docker tag 214c48e87f58 k8s.gcr.io/kube-apiserver-amd64:v1.11.0 && \ 
-docker tag b3b94275d97c k8s.gcr.io/coredns:1.1.3 && \ 
-docker tag b8df3b177be2 k8s.gcr.io/etcd-amd64:3.2.18 && \ 
-docker tag da86e6ba6ca1 k8s.gcr.io/pause-amd64:3.1 && \ 
+docker tag 0e4a34a3b0e6 k8s.gcr.io/kube-scheduler-amd64:v1.11.0
+docker tag 55b70b420785 k8s.gcr.io/kube-controller-manager-amd64:v1.11.0 
+docker tag 1d3d7afd77d1 k8s.gcr.io/kube-proxy-amd64:v1.11.0
+docker tag 214c48e87f58 k8s.gcr.io/kube-apiserver-amd64:v1.11.0
+docker tag b3b94275d97c k8s.gcr.io/coredns:1.1.3
+docker tag b8df3b177be2 k8s.gcr.io/etcd-amd64:3.2.18
+docker tag da86e6ba6ca1 k8s.gcr.io/pause-amd64:3.1
 docker tag da86e6ba6ca1 k8s.gcr.io/pause:3.1
 ```
 
@@ -182,9 +186,11 @@ docker tag da86e6ba6ca1 k8s.gcr.io/pause:3.1
 ```
 kubeadm init --kubernetes-version=v1.11.0 --apiserver-advertise-address 10.82.45.41 --pod-network-cidr=10.244.0.0/16 --node-name=master-node
 ```
-```--apiserver-advertise-address``` 指明用 Master 的哪个 interface 与 Cluster 的其他节点通信。如果 Master 有多个 interface，建议明确指定，如果不指定，kubeadm 会自动选择有默认网关的 interface
+```--apiserver-advertise-address``` 指明用 Master 节点的哪个 `interface` 上的`IP`地址与 Cluster 的其他节点通信。如果 Master 有多个 `interface`，建议明确指定，如果不指定，kubeadm 会自动选择有默认网关的 `interface`
 
 ```--pod-network-cidr``` 指定 Pod 网络的范围。Kubernetes 支持多种网络方案，而且不同网络方案对 ```--pod-network-cidr``` 有自己的要求，这里设置为 ```10.244.0.0/16``` 是因为我们将使用 flannel 网络方案，必须设置成这个 CIDR。当然还有其他网络方案，比如 ```Canal```
+
+`--ignore-preflight-errors` 如果在启动过程中出现了一些错误，如果想要跳过该错误可以添加这个参数，参数值根据执行过程中报错的信息而不通，例如当出现docker版本不符合，我们如果想要直接跳过这个错误提示：`--ignore-preflight-errors=SystemVerification`
 
 初始化过程中,经历的主要过程包括
 

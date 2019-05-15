@@ -20,7 +20,7 @@ sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 
 安装`oracle-java-installer`
 ```
-sudo update-java-alternatives -s java-8-oracle
+sudo apt-get install oracle-java8-installer
 ```
 
 切换到`jdk8`

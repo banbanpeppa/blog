@@ -356,7 +356,7 @@ npm install
 cd app/test
 npm install
 npm run test
-cd ../client/
+cd ../../client/
 npm install
 npm test -- -u --coverage
 npm run build
