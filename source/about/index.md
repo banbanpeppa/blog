@@ -4,13 +4,13 @@ layout: about
 comments: false
 header-img: images/blog-bg.png
 ---
-
 ## 链接
 
 [Blog://banbanpeppa.github.io](https://banbanpeppa.github.io)
 [GitHub://banbanpeppa](https://github.com/banbanpeppa/)
-[知乎://wisteriasomnus](https://www.zhihu.com/people/banbanpeppa/)
+[知乎://banbanpeppa](https://www.zhihu.com/people/banbanpeppa/)
 [中文 Resume](http://banbansomnus.coding.me/banban/resume-cn.pdf)
+
 
 ## 职业经历
 **网易游戏** \| 2018.07 – 2018.09 \| GDC\| 基础架构开发工程师(实习)
