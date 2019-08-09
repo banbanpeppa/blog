@@ -3,13 +3,13 @@ layout:     post
 title:      ARP的原理与基本流程
 date:       2019-08-06 19:18:00
 author:     "banban"
-header-img: "/images/linux/arp-bg.png"
+header-img: "/images/linux/hacker-bg.jpg"
 catalog: true
 tags:
     - Linux
 ---
 
-# ARP的原理与基本流程
+## ARP的原理与基本流程
 
 在局域网环境下，主机之间是通过ARP协议获取对应机器的MAC地址的，ARP交换是在二层网络上面的协议。IP数据包在以太网中传递，但是对于以太网设备是不能识别32位的IP地址的，它只能识别48的物理MAC地址，为此在每一台主机上面都会维护一张从IP地址到物理地址的映射表，而不断更新这个映射表就是ARP（地址解析协议）所需要做的事情，ARP协议位于TCP-IP协议的底层。
 
@@ -53,7 +53,7 @@ Debian 9
 其实在ARP的整个工作流程中不难看出，其实是存在一定的可乘之机的。也就是说在图中的B主机是可以加入到整个arp工作流程来进行arp欺骗的。
 
 具体的做法如下
-![image](/images/linux/arp_cheat.jpg)
+![image](/images/linux/arp-cheat.jpg)
 
 - 在A需要往外发送icmp的一个回显请求报文的时候，主机B发起ARP攻击，重复得发送一个ARP回应包，包的内容为`mac:xx:xx:xx:yy:xx ip:192.168.10.1`，以此来伪装自己就是网关，让A将数据发给自己
 - 于此同时，主机B也通过回应报文的形式告诉网关也就是路由器，称自己是主机A，具体的报文内容为`max: xx:xx:xx:yy:xx ip: 192.168.10.3`，这样主机B就达到了数据包嗅探的能力
