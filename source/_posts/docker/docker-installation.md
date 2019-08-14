@@ -14,14 +14,14 @@ tags:
 
 ### 移除旧的docker相关软件
 ```
-$ sudo apt-get remove docker docker-engine docker.io
+# apt-get remove docker docker-engine docker.io
 ```   
 ```      
-$ sudo apt-get update
+# apt-get update
 ```
 ### 安装基本软件
 ```
-$ sudo apt-get install -y \
+# sudo apt-get install -y \
      apt-transport-https \
      ca-certificates \
      curl \
@@ -30,37 +30,99 @@ $ sudo apt-get install -y \
 ```
 ### 添加docker安装源
 ```
-$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+# curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 ```
 ```
-$ sudo apt-key fingerprint 0EBFCD88
+# apt-key fingerprint 0EBFCD88
 ```
 ```
-$ sudo add-apt-repository \
+# add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
 ```
+如果国外源实在是太慢了，用清华源
 ```
-$ sudo apt-get update
+# add-apt-repository \
+   "deb [arch=amd64] http://mirrors.ustc.edu.cn/docker-ce/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+```
+```
+# apt-get update
 ```
 
 ### 安装
 ```
-$ sudo apt-get install -y docker-ce
+# apt-get install -y docker-ce
 ```
 
 ### 更改国内源
 ```
-vim /etc/default/docker
+vim /etc/docker/daemon.json
 ```
 更改内容
 ```
-DOCKER_OPTS="--dns 114.114.114.114 --graph=/home/chenzhiling/docker --registry-mirror=https://docker.mirrors.ustc.edu.cn/"
+{
+    "registry-mirrors": ["https://registry.docker-cn.com"],
+    "graph": "/home/chenzhiling/docker/lib"
+}
 ```
+修改好之后重启服务
+```
+# sudo service docker restart
+```
+查看是否生效
+```
+# docker info
+Client:
+ Debug Mode: false
 
-```
-$ sudo service docker restart
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 4
+ Server Version: 19.03.1
+ Storage Driver: overlay2
+  Backing Filesystem: xfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb
+ runc version: 425e105d5a03fabd737a126ad93d62a9eeede87f
+ init version: fec3683
+ Security Options:
+  seccomp
+   Profile: default
+ Kernel Version: 4.9.0-6-amd64
+ Operating System: Debian GNU/Linux 9 (stretch)
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 3.863GiB
+ Name: ********
+ ID: LVR2:QPFQ:3P2Z:LCND:2XZE:TRJX:M534:DL5X:ME76:QZAL:2UTR:OIFJ
+ Docker Root Dir: /home/chenzhiling/docker/lib
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Registry Mirrors:
+  https://registry.docker-cn.com/
+ Live Restore Enabled: false
 ```
 
 ## Ubuntu
@@ -82,23 +144,23 @@ systemctl enable docker.service
 ## CentOS7
 1、使用 root 权限登录 Centos。确保 yum 包更新到最新。
 ```
-$ sudo yum update
+# yum update
 ```
 2、卸载旧版本(如果安装过旧版本的话)
 ```
-$ sudo yum remove docker  docker-common docker-selinux docker-engine
+# yum remove docker  docker-common docker-selinux docker-engine
 ```
 3、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的
 ```
-$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 4、设置yum源
 ```
-$ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 5、可以查看所有仓库中所有docker版本，并选择特定版本安装
 ```
-$ yum list docker-ce --showduplicates | sort -r
+# yum list docker-ce --showduplicates | sort -r
 
 http://ftp.cuhk.edu.hk/pub/linux/fedora-epel/7/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for epel
 Trying other mirror.
@@ -130,17 +192,17 @@ Available Packages
 ```
 6、安装docker
 ```
-$ sudo yum install docker-ce  # 由于repo中默认只开启stable仓库
-$ sudo yum install <FQPN>     # 例如：sudo yum install docker-ce-17.12.0.ce
+# yum install docker-ce  # 由于repo中默认只开启stable仓库
+# yum install <FQPN>     # 例如：sudo yum install docker-ce-17.12.0.ce
 ```
 7、启动并加入开机启动
 ```
-$ sudo systemctl enable docker
-$ sudo systemctl start docker
+# systemctl enable docker
+# systemctl start docker
 ```
 8、验证安装是否成功(有client和service两部分表示docker安装启动都成功了)
 ```
-$ docker version
+# docker version
 ```
 
 ### 错误
@@ -220,7 +282,7 @@ Registry Mirrors:
 ...
 ```
 
-### 安装docker-compose
+## 安装docker-compose
 ```
 curl -L --fail https://github.com/docker/compose/releases/download/1.19.0/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose && sudo cp /usr/local/bin/docker-compose /usr/bin
