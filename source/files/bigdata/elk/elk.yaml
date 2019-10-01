@@ -1,0 +1,134 @@
+version: '3'
+services: 
+  es-master:
+    container_name: es-master
+    hostname: es-master
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    restart: always
+    ports: 
+      - 9200:9200
+      - 9300:9300
+    volumes: 
+      - ./elasticsearch/master/conf/es-master.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/master/data:/usr/share/elasticsearch/data
+      - ./elasticsearch/master/logs:/usr/share/elasticsearch/logs
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - elknet
+  es-slave1:
+    container_name: es-slave1
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    restart: always
+    ports:
+      - 9201:9200
+      - 9301:9300
+    volumes:
+      - ./elasticsearch/slave1/conf/es-slave1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/slave1/data:/usr/share/elasticsearch/data
+      - ./elasticsearch/slave1/logs:/usr/share/elasticsearch/logs
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - elknet
+  es-slave2:
+    container_name: es-slave2
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    restart: always
+    ports:
+      - 9202:9200
+      - 9302:9300
+    volumes:
+      - ./elasticsearch/slave2/conf/es-slave2.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/slave2/data:/usr/share/elasticsearch/data
+      - ./elasticsearch/slave2/logs:/usr/share/elasticsearch/logs
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - elknet
+  es-head:
+    container_name: es-head
+    image: mobz/elasticsearch-head:5
+    restart: always
+    ports:
+      - 9110:9100
+    depends_on:
+      - es-master
+      - es-slave1
+      - es-slave2
+    networks:
+      - elknet
+  kibana:
+    container_name: kibana
+    hostname: kibana
+    image: docker.elastic.co/kibana/kibana:${ELK_VERSION}
+    restart: always
+    ports:
+      - 5601:5601
+    volumes:
+      - ./elasticsearch/kibana/conf/kibana.yml:/usr/share/kibana/config/kibana.yml
+    environment:
+      - server.name=testing-chenzhiling.loghub.netease.com
+    depends_on:
+      - es-master
+      - es-slave1
+      - es-slave2
+    networks:
+      - elknet
+  filebeat:
+    container_name: filebeat
+    hostname: filebeat
+    image: docker.elastic.co/beats/filebeat:${ELK_VERSION}
+    restart: always
+    volumes:
+      - ./elasticsearch/filebeat/conf/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./elasticsearch/logs:/home/project/spring-boot-elasticsearch/logs
+      - ./elasticsearch/filebeat/logs:/usr/share/filebeat/logs
+      - ./elasticsearch/filebeat/data:/usr/share/filebeat/data
+    links:
+      - logstash
+    depends_on:
+      - es-master
+      - es-slave1
+      - es-slave2
+    networks:
+      - elknet
+  logstash:
+    container_name: logstash
+    hostname: logstash
+    image: docker.elastic.co/logstash/logstash:${ELK_VERSION}
+    command: logstash -f ./conf/logstash-filebeat.conf
+    restart: always
+    volumes:
+      - ./elasticsearch/logstash/conf/logstash-filebeat.conf:/usr/share/logstash/conf/logstash-filebeat.conf
+    environment:
+      - elasticsearch.hosts=http://es-master:9200
+    ports:
+      - 5044:5044
+    depends_on:
+      - es-master
+      - es-slave1
+      - es-slave2
+    networks:
+      - elknet
+  heartbeat:
+    container_name: heartbeat
+    hostname: heartbeat
+    user: root
+    image: docker.elastic.co/beats/heartbeat:${ELK_VERSION}
+    restart: always
+    command: heartbeat -e -strict.perms=false
+    volumes:
+      - ./elasticsearch/heartbeat/conf/heartbeat.yml:/usr/share/heartbeat/heartbeat.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - output.elasticsearch.hosts=es-master:9200
+    depends_on:
+      - es-master
+      - es-slave1
+      - es-slave2
+    networks:
+      - elknet
+
+networks:
+  elknet:

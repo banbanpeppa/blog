@@ -22,11 +22,11 @@ tar -C /usr/local -xzf go1.11.2.linux-amd64.tar.gz
 ```
 ## 配置环境变量
 ```
-vim /etc/profile
-
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=/opt/gopath
+cp /etc/profile /etc/profile.bak
+echo "export GOROOT=/usr/local/go" >> /etc/profile
+echo "export PATH=\$PATH:\$GOROOT/bin" >> /etc/profile
+echo "export GOPATH=/opt/gopath" >> /etc/profile
+echo "export PATH=\$PATH:\$GOPATH/bin" >> /etc/profile
 ```
 ## 生效环境变量
 ```
