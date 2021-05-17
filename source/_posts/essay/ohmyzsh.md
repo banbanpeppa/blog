@@ -170,6 +170,85 @@ vi ~/.zshrc
 
 `Preferences -> Profiles -> Colors`中有Foreground是标准字体颜色，ANSI Colors中Bright的第一个是补全的字体颜色。
 
+## Logo
+为了能够美化终端，通常会给自己的终端加上一个logo，并且这个logo还会打印一些系统的基本信息。效果如下
+![image](/images/essay/app_zsh_logo.png)
+
+以下介绍几种终端Logo
+* screenfetch
+* neofetch
+* archey
+
+安装方法很简单，直接执行
+```
+brew install screenfetch neofetch archey
+```
+安装好之后分别执行
+
+```
+chenzhiling@banban:blog master ✗ 10d ▲ △ ◒ ➜ screenfetch                               
+                               
+                 -/+:.          chenzhiling@banban
+                :++++.          OS: 64bit Mac OS X 10.14 18A391
+               /+++/.           Kernel: x86_64 Darwin 18.0.0
+       .:-::- .+/:-``.::-       Uptime: 24d 6h 20m
+    .:/++++++/::::/++++++/:`    Packages: 171
+  .:///////////////////////:`   Shell: zsh 5.3
+  ////////////////////////`     Resolution: 2560x1600 ,1920x1080 
+ -+++++++++++++++++++++++`      DE: Aqua
+ /++++++++++++++++++++++/       WM: Quartz Compositor
+ /sssssssssssssssssssssss.      WM Theme: Blue
+ :ssssssssssssssssssssssss-     Disk: 128G / 251G (53%)
+  osssssssssssssssssssssssso/`  CPU: Intel Core i5-8259U @ 2.30GHz
+  `syyyyyyyyyyyyyyyyyyyyyyyy+`  GPU: Intel Iris Plus Graphics 655 
+   `ossssssssssssssssssssss/    RAM: 4622MiB / 8192MiB
+     :ooooooooooooooooooo+.    
+      `:+oo+/:-..-:/+o+/-                             
+```
+neofetch
+```bash
+chenzhiling@banban:blog master ✗ 10d ▲ △ ◒ ➜ neofetch     
+                    'c.          chenzhiling@banban 
+                 ,xNMM.          ------------------ 
+               .OMMMMo           OS: macOS Mojave 10.14 18A391 x86_64 
+               OMMM0,            Host: MacBookPro15,2 
+     .;loddo:' loolloddol;.      Kernel: 18.0.0 
+   cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 24 days, 6 hours, 21 mins 
+ .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Packages: 103 (brew) 
+ XMMMMMMMMMMMMMMMMMMMMMMMX.      Shell: zsh 5.3 
+;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 1440x900@2x, 1920x1080@2x 
+:MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua 
+.MMMMMMMMMMMMMMMMMMMMMMMMX.      WM: Quartz Compositor 
+ kMMMMMMMMMMMMMMMMMMMMMMMMWd.    WM Theme: Blue (Light) 
+ .XMMMMMMMMMMMMMMMMMMMMMMMMMMk   Terminal: vscode 
+  .XMMMMMMMMMMMMMMMMMMMMMMMMK.   CPU: Intel i5-8259U (8) @ 2.30GHz 
+    kMMMMMMMMMMMMMMMMMMMMMMd     GPU: Intel Iris Plus Graphics 655 
+     ;KMMMMMMMWXXWMMMMMMMk.      Memory: 6238MiB / 8192MiB 
+       .cooc,.    .,coo:.
+                                                         
+```
+archey
+```bash
+chenzhiling@banban:blog master ✗ 10d ▲ △ ◒ ➜ archey
+
+                 ###                  User: chenzhiling
+               ####                   Hostname: banban
+               ###                    Distro: OS X 10.14
+       #######    #######             Kernel: Darwin
+     ######################           Uptime: 24 days
+    #####################             Shell: /bin/zsh
+    ####################              Terminal: xterm-256color vscode
+    ####################              CPU: Intel Core i5-8259U CPU @ 2.30GHz
+    #####################             Memory: 8 GB
+     ######################           Disk: 53%
+      ####################            Battery: 100%
+        ################              IP Address: 218.107.55.252
+         ####     #####               
+```
+同样的，也可以在Linux系统上安装上面几种Logo，效果如下
+![image](/images/essay/debian_bash_log.png)
+
 ## 参考
 * [《iTerm2 + Oh My Zsh 打造舒适终端体验》](https://github.com/sirius1024/iterm2-with-oh-my-zsh)
 * [主题列表](https://github.com/robbyrussell/oh-my-zsh/wiki/themes)
+* [4 Best Tools To Display Linux Distribution Logo Art In Terminal](https://fossbytes.com/linux-distribution-logo-ascii-art-terminal/)

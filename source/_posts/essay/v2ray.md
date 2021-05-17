@@ -344,7 +344,10 @@ windows下面建议使用v2rayN: https://github.com/2dust/v2rayN/releases， 强
 ```
 
 ### MacOS
-在MacOS下建议使用V2rayX工具，具体可以参考：https://github.com/Cenmrev/V2RayX， 工具非常便捷强大，配置方式也很简单。
+在MacOS下建议使用V2rayX工具，具体可以参考：https://github.com/Cenmrev/V2RayX ,工具非常便捷强大，配置方式也很简单。
+
+### Android
+下载地址：https://github.com/2dust/v2rayNG ，找到`release`即可
 
 ## 卸载v2ray服务
 服务端如果要卸载v2ray，直接执行

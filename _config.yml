@@ -57,6 +57,10 @@ featured-condition-size: 12
 
 friends: [
     {
+      title: "lookfor404",
+      href: "https://www.lookfor404.com/"
+    },
+    {
       title: "silence",
       href: "https://silence-linhl.github.io/blog/"
     },
@@ -67,6 +71,14 @@ friends: [
     {
       title: "b3434lock",
       href: "https://b3434lock.gitee.io/"
+    },
+    {
+      title: "lamyoung",
+      href: "http://lamyoung.com/"
+    },
+    {
+      title: "时间与精神的小屋",
+      href: "http://www.whitewood.me/"
     }
 ]
 

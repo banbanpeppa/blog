@@ -1,0 +1,17 @@
+<html ng-app="plunker">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+    <script src="example.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div ng-controller="MyCtrl">
+    <button class="btn"  ng-click="showForm=true;focusInput=true">show form and focus input</button>
+    <div ng-show="showForm">
+      <input type="text" custom-focus="focusInput">
+      <button class="btn" ng-click="showForm=false">hide form</button>
+    </div>
+</div>
+  </body>
+</html>
